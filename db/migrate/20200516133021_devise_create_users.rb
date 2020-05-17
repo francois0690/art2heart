@@ -11,6 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string   :reset_password_token
       t.datetime :reset_password_sent_at
 
+
       ## Rememberable
       t.datetime :remember_created_at
 
@@ -32,7 +33,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-
+      ## Personnalised
+      t.string :first_name
+      t.string :last_name
       t.timestamps null: false
     end
 
