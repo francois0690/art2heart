@@ -17,7 +17,7 @@ User.destroy_all
 f = User.new
 f.first_name = "Francois"
 f.last_name = "Jouvray"
-f.email = "barnabe.dubus@gmail.com"
+f.email = "francois0690@gmail.com"
 f.password = "123456"
 f.password_confirmation = "123456"
 f.save!
@@ -25,7 +25,7 @@ f.save!
 b = User.new
 b.first_name = "Barnabé"
 b.last_name = "Dubus"
-b.email = "gerard@gmail.com"
+b.email = "barnabe.dubus@gmail.com"
 b.password = "123456"
 b.password_confirmation = "123456"
 b.save!
