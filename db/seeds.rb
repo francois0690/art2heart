@@ -62,7 +62,7 @@ p1 = Piece.new
 p1.owner = f
 p1.name ="Mona Lisa"
 p1.artist ="Léonard de Vinci"
-p1.price = "425 €"
+p1.price = 425
 p1.status ="available"
 p1.category = "tableau"
 p1.save!
@@ -71,7 +71,7 @@ p2 = Piece.new
 p2.owner = b
 p2.name ="La création d'Adam"
 p2.artist ="Michel-Ange"
-p2.price = "512 €"
+p2.price = 512
 p2.status ="available"
 p2.category = "tableau"
 p2.save!
@@ -80,7 +80,7 @@ p3 = Piece.new
 p3.owner = s
 p3.name ="Les Nymphéas"
 p3.artist ="Claude Monet"
-p3.price = "147 €"
+p3.price = 147
 p3.status ="available"
 p3.category = "tableau"
 p3.save!
@@ -89,7 +89,7 @@ p4 = Piece.new
 p4.owner = m
 p4.name ="La Jeune Fille à la perle"
 p4.artist ="Johannes Vermeer"
-p4.price = "65 €"
+p4.price = 65
 p4.status ="not available"
 p4.category = "tableau"
 p4.save!
@@ -98,7 +98,7 @@ p5 = Piece.new
 p5.owner = f
 p5.name ="le David"
 p5.artist ="Michel-Ange"
-p5.price = "631 €"
+p5.price = 631
 p5.status ="available"
 p5.category = "sculpture"
 p5.save!
