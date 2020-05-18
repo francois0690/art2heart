@@ -4,10 +4,9 @@ class CreatePieces < ActiveRecord::Migration[6.0]
       t.references :user, foreign_key: true
       t.string :name
       t.string :artist
-      t.string :price
+      t.integer :price
       t.string :status
       t.string :category
-
       t.timestamps
     end
   end
