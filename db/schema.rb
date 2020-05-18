@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_05_17_124827) do
     t.bigint "user_id"
     t.string "name"
     t.string "artist"
-    t.string "price"
+    t.integer "price"
     t.string "status"
     t.string "category"
     t.datetime "created_at", precision: 6, null: false
