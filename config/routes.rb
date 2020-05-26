@@ -18,6 +18,12 @@ Rails.application.routes.draw do
   get 'pieces/show'
   get 'pieces/update'
   devise_for :users
-  root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  unauthenticated do
+    root to: 'pages#home'
+  end
+
+  authenticated do
+    root to: 'users#dashboard', as: :authenticated_root
+  end
 end
