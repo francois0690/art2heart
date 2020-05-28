@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
+require "open-uri"
 
 p "cleaning database"
 Transaction.destroy_all
@@ -58,6 +58,7 @@ p "#{User.count} utilisateurs crées"
 
 
 #Create pieces
+f1 = URI.open('https://res.cloudinary.com/diryp7blh/image/upload/v1590687574/art2heart/alexander-schimmeck-ineC_oi7NHs-unsplash_vqjahs.jpg')
 p1 = Piece.new
 p1.owner = f
 p1.name ="Mona Lisa"
@@ -65,8 +66,11 @@ p1.artist ="Léonard de Vinci"
 p1.price = 425
 p1.status ="available"
 p1.category = "tableau"
+p1.photos.attach(io: f1, filename: 'sculpture1.jpg', content_type: 'image/jpg')
 p1.save!
+p p1.photos.attached?
 
+f2 = URI.open('https://res.cloudinary.com/diryp7blh/image/upload/v1590687574/art2heart/davisco-rhUU1pemhQ0-unsplash_pxkakg.jpg')
 p2 = Piece.new
 p2.owner = b
 p2.name ="La création d'Adam"
@@ -74,8 +78,11 @@ p2.artist ="Michel-Ange"
 p2.price = 512
 p2.status ="available"
 p2.category = "tableau"
+p2.photos.attach(io: f2, filename: 'peinture2.jpg', content_type: 'image/jpg')
 p2.save!
+p p2.photos.attached?
 
+f3 = URI.open('https://res.cloudinary.com/diryp7blh/image/upload/v1590687573/art2heart/robert-keane-rlbG0p_nQOU-unsplash_wov7ek.jpg')
 p3 = Piece.new
 p3.owner = s
 p3.name ="Les Nymphéas"
@@ -83,8 +90,11 @@ p3.artist ="Claude Monet"
 p3.price = 147
 p3.status ="available"
 p3.category = "tableau"
+p3.photos.attach(io: f3, filename: 'peinture3.jpg', content_type: 'image/jpg')
 p3.save!
+p p3.photos.attached?
 
+f4 = URI.open('https://res.cloudinary.com/diryp7blh/image/upload/v1590687574/art2heart/alexander-schimmeck-ineC_oi7NHs-unsplash_vqjahs.jpg')
 p4 = Piece.new
 p4.owner = m
 p4.name ="La Jeune Fille à la perle"
@@ -92,8 +102,11 @@ p4.artist ="Johannes Vermeer"
 p4.price = 65
 p4.status ="not available"
 p4.category = "tableau"
+p4.photos.attach(io: f4, filename: 'peinture4.jpg', content_type: 'image/jpg')
 p4.save!
+p p4.photos.attached?
 
+f5 = URI.open('https://res.cloudinary.com/diryp7blh/image/upload/v1590687573/art2heart/mika-y-RjWd6Ol7A-unsplash_gafhnq.jpg')
 p5 = Piece.new
 p5.owner = f
 p5.name ="le David"
@@ -101,7 +114,9 @@ p5.artist ="Michel-Ange"
 p5.price = 631
 p5.status ="available"
 p5.category = "sculpture"
+p5.photos.attach(io: f5, filename: 'sculpture5.jpg', content_type: 'image/jpg')
 p5.save!
+p p5.photos.attached?
 
 p "#{Piece.count} pièces créées"
 
@@ -114,3 +129,6 @@ t1.end = "2020-06-25"
 t1.save!
 
 p "#{Transaction.count} transaction créées"
+
+
+
