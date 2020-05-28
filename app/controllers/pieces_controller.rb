@@ -26,6 +26,7 @@ class PiecesController < ApplicationController
 
   def new
     @piece = Piece.new
+    @user = curent_user
   end
 
   def show
@@ -41,6 +42,6 @@ class PiecesController < ApplicationController
   end
 
   def piece_params
-    params.require(:piece).permit(:name, :photo)
+    params.require(:piece).permit(:photo)
   end
 end
