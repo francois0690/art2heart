@@ -26,4 +26,12 @@ Rails.application.routes.draw do
   authenticated do
     root to: 'users#dashboard', as: :authenticated_root
   end
+
+  resources :users do
+    resources :transactions, except: [ :new, :create ]
+    resources :pieces do
+        resources :transactions, only: [ :new, :create ]
+    end
+  end
+
 end
