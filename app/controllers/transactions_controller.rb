@@ -9,7 +9,12 @@ class TransactionsController < ApplicationController
   end
 
   def index
-    @transactions = Transaction.all
+    @transactions = current_user.transactions.all
+    @total = 0
+    current_user.transactions.all.each do |t|
+       @total += t.piece.price
+       p @total
+    end
   end
 
   def new
