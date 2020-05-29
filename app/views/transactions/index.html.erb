@@ -1,5 +1,6 @@
-<h1>Transactions#index</h1>
+<h1>Mes réservations</h1>
 <!-- # <%= current_user.transactions %> -->
 
 <p>Nombre de transactions: <%= current_user.transactions.count %></p>
-<p>Find me in app/views/transactions/index.html.erb</p>
+<%= render 'shared/transactions' %>
+
