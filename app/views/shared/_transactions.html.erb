@@ -1,0 +1,35 @@
+
+<div class="transactions">
+
+  <p>Mes transactions</p>
+  <p>Nombre de transactions: <%= current_user.transactions.count %></p>
+
+  <div class="transaction">
+
+      <% @transactions.each do |t| %>
+
+      <div class="transaction-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path t.piece.photos.last.key, height: 300, width: 400 %>)">
+      </div>
+
+      <p> nom <%= t.piece.name %></p>
+
+
+
+    <div class="transaction-contenu">
+
+      <p> Date de début: <%= t.start %></p>
+      <p> Date de fin: <%= t.end %></p>
+      <p> Prix / jour: <%= t.piece.prix %></p>
+      <p> Propritaire : <%= t.piece.owner.fist_name %> <%= t.piece.owner.last_name %></p>
+
+    </div>
+
+<% end %>
+
+
+
+  </div>
+
+
+
+</div>
