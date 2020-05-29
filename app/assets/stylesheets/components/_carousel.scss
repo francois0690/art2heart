@@ -1,20 +1,16 @@
 .pieces {
 
   width: 50%;
-  // flex-grow: 1;
   margin-top: 8px;
-  padding: 20px;                             /* Internal space */
-  border-radius: 4px;                        /* Small radius */
+  padding: 20px;
+  border-radius: 4px;
   box-shadow: 0 5px 10px rgba(0,0,0,.3);
   background-color: rgba(250,250,250,.5);
 
    h1 {
   color: black;
   font-size: 20px;
-  // font-weight: bold;
   margin: 0;
-  // text-shadow: 2px 2px 3px rgba(0,0,0,0.5);
-
   border-bottom: 1px solid rgba(0,0,0,0.5);
   margin-bottom: 8px;
   }
@@ -30,7 +26,6 @@
   p {
   color: white;
   font-size: 16px;
-  // font-weight: bold;
   margin: 0;
   text-shadow: 2px 2px 3px rgba(0,0,0,0.5);
 
