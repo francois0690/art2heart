@@ -1,13 +1,25 @@
-<h1>vous êtes bien loggé <%= current_user.first_name %> !</h1>
+
+
 
 <div class="container">
+  <!-- <h3 >Heureux de vous revoir parmi nous <%= current_user.first_name %> !</h3> -->
 
-  <h1>Dasboard</h1>
+
+
+  <!-- <h1>Dasboard</h1> -->
+
   <%= render 'shared/transactions' %>
+  <%= render 'shared/pieces' %>
 
-</div>
+
+
+
 
 <%= link_to "voir toutes les pièces", pieces_path %>
 <br>
 <%= link_to "ajouter une piece", new_piece_path %>
+
+
+</div>
+
 

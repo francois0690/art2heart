@@ -1,0 +1,79 @@
+<div class="pieces">
+
+
+    <h1>Les dernieres pièces en magasin</h1>
+    <!-- <h3>Vous avez un total de <%= current_user.transactions.count %> transactions</h3> -->
+
+
+
+<!--  -->
+
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
+
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <!-- <img src= class="d-block w-100" alt="..."> -->
+
+          <%= cl_image_tag @pieces[1].photos.first.key ,width: 300, height: 200, crop: :fill , gravity: :face, class: "d-block w-100" %>
+
+          <div class="carousel-caption d-none d-md-block">
+            <h5><%= @pieces[1].name %></h5>
+            <p><i><%= @pieces[1].artist %></i>, disponible à la location dès maintenant !</p>          </div>
+        </div>
+        <div class="carousel-item">
+          <!-- <img src="..." class="d-block w-100" alt="..."> -->
+          <%= cl_image_tag @pieces[2].photos.first.key ,width: 300, height: 200, crop: :fill , gravity: :face, class: "d-block w-100" %>
+          <div class="carousel-caption d-none d-md-block">
+            <h5><%= @pieces[2].name %></h5>
+            <p><i><%= @pieces[2].artist %></i>, disponible à la location dès maintenant !</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <!-- <img src="..." class="d-block w-100" alt="..."> -->
+          <%= cl_image_tag @pieces[3].photos.first.key ,width: 300, height: 200, crop: :fill , gravity: :face, class: "d-block w-100" %>
+          <div class="carousel-caption d-none d-md-block">
+            <h5><%= @pieces[3].name %></h5>
+            <p><i><%= @pieces[3].artist %></i>, disponible à la location dès maintenant !</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <!-- <img src="..." class="d-block w-100" alt="..."> -->
+          <%= cl_image_tag @pieces[4].photos.first.key ,width: 300, height: 200, crop: :fill , gravity: :face, class: "d-block w-100" %>
+          <div class="carousel-caption d-none d-md-block">
+            <h5><%= @pieces[4].name %></h5>
+            <p><i><%= @pieces[4].artist %></i>, disponible à la location dès maintenant !</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <!-- <img src="..." class="d-block w-100" alt="..."> -->
+          <%= cl_image_tag @pieces[0].photos.first.key ,width: 300, height: 200, crop: :fill , gravity: :face, class: "d-block w-100" %>
+          <div class="carousel-caption d-none d-md-block">
+            <h5><%= @pieces[0].name %></h5>
+            <p><i><%= @pieces[0].artist %></i>, disponible à la location dès maintenant !</p>
+          </div>
+        </div>
+
+
+
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Précedent</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Suivant</span>
+      </a>
+    </div>
+
+
+</div>
