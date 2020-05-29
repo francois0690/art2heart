@@ -1,2 +1,9 @@
 <h1>Transactions#new</h1>
 <p>Find me in app/views/transactions/new.html.erb</p>
+<h2>pièce : <%= @piece.name %></h2>
+<p>propriétaire : <%= "#{@piece.owner.first_name} #{@piece.owner.last_name}"%></p>
+<br>
+TODO : inserrer un render du simpleform
+<br>
+<%= link_to "retour", piece_path(@piece) %>
+

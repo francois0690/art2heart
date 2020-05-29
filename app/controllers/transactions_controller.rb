@@ -13,6 +13,7 @@ class TransactionsController < ApplicationController
   end
 
   def new
+    @piece = Piece.find(params[:piece_id])
   end
 
   def show
