@@ -1,2 +1,17 @@
 <h1>Pieces#show</h1>
 <p>Find me in app/views/pieces/show.html.erb</p>
+<%= link_to "retour aux pièces", pieces_path %>
+<br>
+<%= link_to "reserver", new_piece_transaction_path(@piece) %>
+<br>
+<%= link_to 'modifier', edit_piece_path(@piece) %> |
+<br>
+<%= link_to "supprimer", piece_path(@piece) %>
+<%= button_to piece_path(@piece),
+        method: :delete,
+        data: { confirm: "Voulez-vous supprimer #{@piece.name}?" },
+        type: "button",
+        class: "btn btn-info" do %>
+        Supprimer
+      <% end %>
+<br>

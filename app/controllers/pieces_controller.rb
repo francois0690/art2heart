@@ -3,6 +3,7 @@ class PiecesController < ApplicationController
 
   def create
     @piece = Piece.new(piece_params)
+    @piece.owner = @user
     if @piece.save
       redirect_to piece_path(@piece)
     else
@@ -16,8 +17,6 @@ class PiecesController < ApplicationController
   end
 
   def edit
-    @piece.update(piece_params)
-    redirect_to piece_path(@piece)
   end
 
   def index
@@ -26,19 +25,21 @@ class PiecesController < ApplicationController
 
   def new
     @piece = Piece.new
-    @user = curent_user
+    @user = current_user
   end
 
   def show
   end
 
   def update
+    @piece.update(piece_params)
+    redirect_to piece_path(@piece)
   end
 
   private
 
   def set_piece
-    @piece = Pieces.find(params[:id])
+    @piece = Piece.find(params[:id])
   end
 
   def piece_params
