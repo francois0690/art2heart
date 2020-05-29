@@ -8,5 +8,26 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 50px;
+  border-radius: 50px;
+}
+
+.navbar-lewagon h2 {
+
+  text-align: center;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.5);
+}
+
+.navbar-lewagon p {
+text-align: center;
+  color: black;
+  font-size: 16px;
+  font-weight: lighter;
+  margin: 0;
+  // text-shadow: 2px 1px 2px rgba(0,0,0,0.5);
+  opacity: 0.8;
 }
