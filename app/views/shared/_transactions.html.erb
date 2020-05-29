@@ -14,10 +14,10 @@
             <div class="card-trip-infos">
               <div>
                 <h2><%= t.piece.name %> <i>(<%= t.piece.artist%>)</i></h2>
-                <p>Durée de la location: <%= t.start %> au <%= t.end %></p>
+                <p>Durée de la location: <%= t.start %> au <%= t.end %>
                 <p>Type d'oeuvre: <%= t.piece.category%>, Disponibilité: <%= t.piece.status%></p>
-                <p> Propriétaire : <%= t.piece.owner.first_name %> <%= t.piece.owner.last_name %></p>
-                <%= link_to "Modifier la réservation", transaction_path(t) %>
+                <p>Propriétaire : <%= t.piece.owner.first_name %> <%= t.piece.owner.last_name %></p>
+                <%= link_to "",transaction_path(t) %>
               </div>
               <%= image_tag "#{t.piece.owner.first_name.downcase}.jpg", class: "card-trip-user avatar-bordered" %>
               <h2 class="card-trip-pricing"><%= t.piece.price %> €</h2>
