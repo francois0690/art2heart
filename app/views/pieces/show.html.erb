@@ -6,7 +6,6 @@
 <br>
 <%= link_to 'modifier', edit_piece_path(@piece) %> |
 <br>
-<%= link_to "supprimer", piece_path(@piece) %>
 <%= button_to piece_path(@piece),
         method: :delete,
         data: { confirm: "Voulez-vous supprimer #{@piece.name}?" },
