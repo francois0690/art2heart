@@ -9,7 +9,7 @@
 
   <div>
     <h2>Art2Heart</h2>
-    <p>la location d'oeuvre d'art 3.0</p>
+    <p>la location d'oeuvres d'art 3.0</p>
    </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -22,13 +22,13 @@
           <%= link_to "Catalogue", pieces_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Mes locations", transactions_path, class: "nav-link" %>
+          <%= link_to "Mes réservations", transactions_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "#{current_user.first_name.downcase}.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "changer mot de passe", edit_user_registration_path, class: "dropdown-item" %>
-            <%= link_to "se déconecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            <%= link_to "se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       <% else %>

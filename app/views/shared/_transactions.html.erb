@@ -3,46 +3,34 @@
 <div class="gauche">
 
     <div class="transactions">
-    <h1>Mes transactions</h1>
-    <h3>Vous avez un total de <%= current_user.transactions.count %> transactions</h3>
+      <h1>Mes réservations</h1>
+      <% if current_user.transactions.count == 0 %>
+        <h3><%= current_user.first_name %>, vous n'avez pas encore effectué de réservations.</h3>
+      <% else %>
+        <h3><%= current_user.first_name %>, vous avez effectué de <%= current_user.transactions.count %> réservations.</h3>
 
-
-
-    <% @transactions.each do |t| %>
-
-
-
-    <div class="transaction" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path t.piece.photos.last.key %>)">
-
-
-
-       <div class="card-trip-infos">
-        <div>
-          <h2><%= t.piece.name %> <i>(<%= t.piece.artist%>)</i></h2>
-          <p>Durée de la location: <%= t.start %> au <%= t.end %></p>
-          <p>Type d'oeuvre: <%= t.piece.category%>, Disponibilité: <%= t.piece.status%></p>
-          <!-- <p>Disponibilité: <%= t.piece.status%></p> -->
-          <p> Propriétaire : <%= t.piece.owner.first_name %> <%= t.piece.owner.last_name %></p>
-        </div>
-
-        <%= image_tag "#{t.piece.owner.first_name.downcase}.jpg", class: "card-trip-user avatar-bordered" %>
-        <h2 class="card-trip-pricing"><%= t.piece.price %> €</h2>
-
-      </div>
-
+        <% @transactions.each do |t| %>
+          <div class="transaction" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path t.piece.photos.last.key %>)">
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= t.piece.name %> <i>(<%= t.piece.artist%>)</i></h2>
+                <p>Durée de la location: <%= t.start %> au <%= t.end %></p>
+                <p>Type d'oeuvre: <%= t.piece.category%>, Disponibilité: <%= t.piece.status%></p>
+                <p> Propriétaire : <%= t.piece.owner.first_name %> <%= t.piece.owner.last_name %></p>
+              </div>
+              <%= image_tag "#{t.piece.owner.first_name.downcase}.jpg", class: "card-trip-user avatar-bordered" %>
+              <h2 class="card-trip-pricing"><%= t.piece.price %> €</h2>
+            </div>
+          </div>
+        <% end %>
+    </div>
+    <div class="droite">
+      <h3>Total de vos réservations</h3>
+      <p>Total H.T. : <%= @total %> €</p>
+      <p>Montant TVA : <%= ((@total * 20.6) / 100).round(2)%> € </p>
+      <p>Total T.T.C. : <b><%= (@total * 1.206).round(2)%> € </b></p>
     </div>
     <% end %>
-  </div>
-  <div class="droite">
-    <h3>Total de vos transactions</h3>
-    <p>Total H.T.: <%= @total %> €</p>
-    <p>Montant TVA: <%= (@total / 20.6*100).round(2)%> € </p>
-    <p>Total T.T.C: <%= (@total * 1.206).round(2)%> € </p>
-
-</div>
-
-
-
 </div>
 
 
