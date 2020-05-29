@@ -3,7 +3,8 @@ class PiecesController < ApplicationController
 
   def create
     @piece = Piece.new(piece_params)
-    @piece.owner = @user
+    @piece.owner = current_user
+    @piece.save
     if @piece.save
       redirect_to piece_path(@piece)
     else
@@ -43,6 +44,6 @@ class PiecesController < ApplicationController
   end
 
   def piece_params
-    params.require(:piece).permit(:photo)
+    params.require(:piece).permit(:name, :artist, :category, :price, :photo)
   end
 end

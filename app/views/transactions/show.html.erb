@@ -1,2 +1,13 @@
 <h1>Transactions#show</h1>
-<p>Find me in app/views/transactions/show.html.erb</p>
+<%= link_to "retour aux réservatons", transactions_path %>
+<br>
+<%= link_to 'modifier', edit_transaction_path(@transaction) %> |
+<br>
+<%= button_to transaction_path(@transaction),
+        method: :delete,
+        data: { confirm: "Voulez-vous annuler la réservation de :#{@transaction.piece.name}?" },
+        type: "button",
+        class: "btn btn-info" do %>
+        annuler la réservation
+      <% end %>
+<br>
