@@ -1,2 +1,7 @@
 <h1>Pieces#index</h1>
 <p>Find me in app/views/pieces/index.html.erb</p>
+<% @pieces.each do |piece| %>
+  <li><%= link_to piece.name, piece_path(piece)%></li>
+<% end %>
+<br>
+<%= link_to "dashboard", root_path %>
