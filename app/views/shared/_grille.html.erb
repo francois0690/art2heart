@@ -3,18 +3,16 @@
   <h1>Les dernières oeuvres en magasin</h1>
   <div class="oeuvres">
 
-
-
-
           <% @pieces.each do |p| %>
+            <%= link_to piece_path(p) do %>
             <div class="oeuvre" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path p.photos.first.key ,height: 150, width: 150 %>)">
-              <div class="oeuvre-infos">
 
                   <h2><%= p.name %></h2>
                   <p><i><%= p.artist%></i></p>
                   <h3>Louez-moi à partir de <%= p.price %> €/jour</h3>
-              </div>
+
             </div>
+            <% end %>
           <% end %>
   </div>
 
