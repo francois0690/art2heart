@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   resources :pieces do
       resources :transactions, only: [ :new, :create ]
   end
-
+  get 'profil', to: 'users#profil', as: 'profil'
+  patch 'profil/users_id', to: 'users#update_avatar', as: :update_avatar
 end

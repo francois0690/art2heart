@@ -1,0 +1,11 @@
+<h1>mon profil</h1>
+<%= link_to "changer mot de passe", edit_user_registration_path, class: "dropdown-item" %>
+<%= profile_image(current_user) %>
+<h3>ajouter une photo</h3>
+
+<%= simple_form_for(current_user, :url => update_avatar_path, method: 'patch') do |f| %>
+  <%= f.input :avatar, hint: "Votre photo", label:'Selectionner une photo', as: :file, input_html: { accept: "image/*" }%>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "retour au dashboard", root_path %>
