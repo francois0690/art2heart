@@ -3,9 +3,9 @@
 <%= profile_image(current_user) %>
 <h3>ajouter une photo</h3>
 
-<%= simple_form_for(current_user) do |f| %>
+<%= simple_form_for(current_user, :url => update_avatar_path, method: 'patch') do |f| %>
   <%= f.input :avatar, hint: "Votre photo", label:'Selectionner une photo', as: :file, input_html: { accept: "image/*" }%>
   <%= f.submit %>
-
 <% end %>
+
 <%= link_to "retour au dashboard", root_path %>
