@@ -19,7 +19,7 @@
                 <p>Propriétaire : <%= t.piece.owner.first_name %> <%= t.piece.owner.last_name %></p>
                 <%= link_to "",transaction_path(t) %>
               </div>
-              <%= profile_image(current_user, class: "card-trip-user avatar-bordered") %>
+              <%= profile_image(t.piece.owner, class: "card-trip-user avatar-bordered") %>
               <h2 class="card-trip-pricing"><%= t.piece.price %> €</h2>
             </div>
           </div>
