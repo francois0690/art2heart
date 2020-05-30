@@ -3,6 +3,6 @@
   <%= f.input :artist %>
   <%= f.input :category %>
   <%= f.input :price %>
-  <%= f.input :photos, hint: "Votre oeuvre", label:'Selectionner une photo', as: :file, input_html: { accept: "image/*" }%>
+  <%= f.input :photos, hint: "Votre oeuvre", label:'Selectionner vos photo', as: :file, input_html: { multiple: true, accept: "image/*" }%>
   <%= f.submit %>
 <% end %>
