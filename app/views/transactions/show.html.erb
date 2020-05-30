@@ -1,13 +1,24 @@
-<h1>Transactions#show</h1>
-<%= link_to "retour aux réservatons", transactions_path %>
-<br>
-<%= link_to 'modifier', edit_transaction_path(@transaction) %> |
-<br>
-<%= button_to transaction_path(@transaction),
+
+  <h1><%= @transaction.piece.name %></h1>
+  <h2><%= @transaction.piece.artist %></h2>
+
+<%= render 'shared/carousel', piece: @transaction.piece %>
+  
+<div class="container-text my-4">
+  <div class="container-infos">
+  <p><%= "début de location : #{@transaction.start}" %></p>
+  <p><%= "fin de location : #{@transaction.end}" %></p>
+  <p><%= "montant de la location : #{@montant} €" %></p>
+
+</div>
+
+<div class= "d-inline-flex">
+<%= button_to "retour aux réservatons", transactions_path, class: "p-1 m-1" %>
+
+<%= button_to 'modifier', edit_transaction_path(@transaction), class: "p-1 m-1"%> 
+
+<%= button_to 'annuler la réservation', transaction_path(@transaction),
         method: :delete,
         data: { confirm: "Voulez-vous annuler la réservation de :#{@transaction.piece.name}?" },
-        type: "button",
-        class: "btn btn-info" do %>
-        annuler la réservation
-      <% end %>
-<br>
+        class: "p-1 m-1" %>
+</div>

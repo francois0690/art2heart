@@ -37,6 +37,7 @@ class TransactionsController < ApplicationController
   end
 
   def show
+    @montant = montant(@transaction)
   end
 
   def update
@@ -45,6 +46,11 @@ class TransactionsController < ApplicationController
   end
 
   private
+
+  def montant(transaction)
+    days = transaction.end - transaction.start
+    (days * transaction.piece.price).ceil
+  end
 
   def transaction_params
     params.require(:transaction).permit(:start, :end, :piece_id)
