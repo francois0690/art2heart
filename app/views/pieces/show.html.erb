@@ -1,16 +1,45 @@
-<h1>Pieces#show</h1>
-<p>Find me in app/views/pieces/show.html.erb</p>
-<%= link_to "retour aux pièces", pieces_path %>
-<br>
-<%= link_to "reserver", new_piece_transaction_path(@piece) %>
-<br>
-<%= link_to 'modifier', edit_piece_path(@piece) %> |
-<br>
-<%= button_to piece_path(@piece),
+<div class="container-img mt-3">
+
+
+  <%= @piece.photos.each do |photo| %>
+    <%=cl_image_tag photo.key, height: 500, crop: :fill  %>
+  <% end %>
+  <div class="container-text">
+    <div class="container-infos">
+    <h1><%= @piece.name %></h1>
+    div.
+    <p><%= "category : #{@piece.category}" %></p>
+    <p><%=  %></p>
+  </div>
+
+  <div class="container-actions">
+
+    <div class="container-actions-link">
+      <%= link_to "retour aux pièces", pieces_path, class: "black" %>
+      <%= link_to "reserver", new_piece_transaction_path(@piece), class: "black" %>
+      <%= link_to 'modifier', edit_piece_path(@piece), class: "black" %>
+    </div>
+  </div>
+
+
+<div class="container-button">
+  <%= button_to piece_path(@piece),
         method: :delete,
         data: { confirm: "Voulez-vous supprimer #{@piece.name}?" },
         type: "button",
-        class: "btn btn-info" do %>
+        class: "btn btn-info rounded-pill" do %>
         Supprimer
       <% end %>
 <br>
+
+</div>
+
+  </div>
+
+
+
+
+
+</div>
+
+

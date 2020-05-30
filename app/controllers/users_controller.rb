@@ -9,7 +9,6 @@ class UsersController < ApplicationController
     end
 
     @pieces = Piece.all
-    # @pieces = current_user.pieces
   end
 
   def profil
