@@ -21,12 +21,11 @@
         <li class="nav-item">
           <%= link_to "Catalogue", pieces_path, class: "nav-link" %>
         </li>
-        <li class="nav-item">
-          <%= link_to "Mes réservations", transactions_path, class: "nav-link" %>
-        </li>
         <li class="nav-item dropdown">
           <%= profile_image(current_user, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Mes oeuvres", my_pieces_path, class: "dropdown-item" %>
+            <%= link_to "Mes réservations", transactions_path, class: "dropdown-item" %>
             <%= link_to "Profil", profil_path, class: "dropdown-item" %>
             <%= link_to "se déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
