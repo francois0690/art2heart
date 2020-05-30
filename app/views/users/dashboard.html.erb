@@ -1,11 +1,9 @@
-<!-- <h3 >Heureux de vous revoir parmi nous <%= current_user.first_name %> !</h3> -->
 
+  <!-- <h3 >Heureux de vous revoir parmi nous <%= current_user.first_name %> !</h3> -->
 
+  <%= render 'shared/transactions' %>
+  <%= render 'shared/grille' %>
 
-<!-- <h1>Dasboard</h1> -->
-
-<%= render 'shared/transactions' %>
-<%= render "shared/carousel",  piece: @pieces.first %>
 <%= link_to "voir toutes les pièces", pieces_path %>
  <br>
  <%= link_to "ajouter une piece", new_piece_path %>
