@@ -11,4 +11,11 @@ class UsersController < ApplicationController
     @pieces = Piece.all
     # @pieces = current_user.pieces
   end
+
+  def profil
+    @user = current_user
+  end
+
+  def update_avatar
+  end
 end
