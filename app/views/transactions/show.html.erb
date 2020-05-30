@@ -13,9 +13,9 @@
 </div>
 
 <div class= "d-inline-flex">
-<%= button_to "retour aux réservatons", transactions_path, class: "p-1 m-1" %>
+<%= button_to "retour aux réservatons", transactions_path, method: :get, class: "p-1 m-1" %>
 
-<%= button_to 'modifier', edit_transaction_path(@transaction), class: "p-1 m-1"%> 
+<%= button_to 'modifier', edit_transaction_path(@transaction), method: :get,class: "p-1 m-1"%> 
 
 <%= button_to 'annuler la réservation', transaction_path(@transaction),
         method: :delete,
