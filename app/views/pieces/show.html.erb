@@ -1,13 +1,11 @@
 <div class="container-img mt-3">
 
 
-  <%= @piece.photos.each do |photo| %>
-    <%=cl_image_tag photo.key, height: 500, crop: :fill  %>
-  <% end %>
+  <%= render 'shared/carousel', piece: @piece %>
+  
   <div class="container-text">
     <div class="container-infos">
     <h1><%= @piece.name %></h1>
-    div.
     <p><%= "category : #{@piece.category}" %></p>
     <p><%=  %></p>
   </div>
