@@ -38,6 +38,11 @@ class PiecesController < ApplicationController
     redirect_to piece_path(@piece)
   end
 
+  def my_pieces
+    @pieces = current_user.pieces
+    render :index
+  end
+
   private
 
   def set_piece
