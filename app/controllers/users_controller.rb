@@ -9,6 +9,18 @@ class UsersController < ApplicationController
     end
 
     @pieces = Piece.all
-    # @pieces = current_user.pieces
+  end
+
+  def profil
+  end
+
+  def update_avatar
+  current_user.update(profil_params)
+  redirect_to profil_path
+  end
+
+  private
+  def profil_params
+    params.require(:user).permit(:avatar)
   end
 end
