@@ -16,3 +16,30 @@
 .black {
   color: black !important;
 }
+
+.container-text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-infos-left {
+  width: 400px;
+}
+.container-infos-categories{
+  display: flex;
+  justify-content: flex-start;
+}
+.prix {
+  padding-left: 100px;
+  text-align: right;
+  font-weight: bold;
+
+}
+.split{
+  background-color: black;
+  height: 1px;
+  width: 100%;
+}
+.piece-name {
+  padding-top: 16px;
+}
