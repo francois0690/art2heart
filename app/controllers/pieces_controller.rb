@@ -30,6 +30,7 @@ class PiecesController < ApplicationController
   end
 
   def show
+    set_piece
   end
 
   def update
