@@ -2,7 +2,7 @@
   <!-- <h3 >Heureux de vous revoir parmi nous <%= current_user.first_name %> !</h3> -->
 
   <%= render 'shared/transactions' %>
-  <%= render 'shared/grille' %>
+  <%= render 'shared/grille' , pieces: @pieces%>
 
 <%= link_to "voir toutes les pièces", pieces_path %>
  <br>
