@@ -1,5 +1,6 @@
 <%= simple_form_for [ @piece, @transaction ] do |f| %>
   <%= f.input :start, order: [:day, :month, :year] %>
-  <%= f.input :end, order: [:day, :month, :year] %>
+  <%= f.input :end, order: [:day, :month, :year] %> 
+  <%= f.input :status, collection: %w(demande acceptee annulee)%>
   <%= f.submit %>
 <% end %>
