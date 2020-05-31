@@ -12,4 +12,15 @@
 @import "components/index";
 @import "pages/index";
 @import "users/dashboard";
-@import "pieces/show"
+@import "pieces/show";
+
+
+body {
+  // background-color: black;
+  // height: 100vh;
+  background-image: linear-gradient(rgba(200,200,200,0.1), rgba(200,200,200,0.3)), asset_url('back6.jpg');
+  background-size: cover;
+  // background-position: center;
+
+
+}
