@@ -5,7 +5,7 @@
   padding: 20px;
   border-radius: 4px;
   box-shadow: 0 5px 10px rgba(0,0,0,.3);
-  background-color: rgba(250,250,250,.5);
+  background-color: rgba(250,250,250,.7);
 
  h1 {
   color: black;
@@ -13,6 +13,14 @@
   margin: 0;
   border-bottom: 1px solid rgba(0,0,0,0.5);
   margin-bottom: 16px;
+  }
+
+  h3 {
+  color: black;
+  font-size: 16px;
+  margin: 0;
+  margin-bottom: 8px;
+  margin-top: 8px;
   }
 
 
@@ -35,7 +43,7 @@
 
   border-radius: 4px;
   box-shadow: 0 5px 10px rgba(0,0,0,.3);
-  background-color: rgba(250,250,250,.5);
+  background-color: rgba(250,250,250,.7);
 
   background-size: cover;
   background-position: center;
@@ -70,7 +78,7 @@
  h3 {
     margin: 0;
     color: white;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
     opacity: 0.8;
     text-shadow: 2px 2px 3px rgba(0,0,0,0.5);

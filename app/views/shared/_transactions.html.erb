@@ -5,33 +5,42 @@
     <div class="transactions">
       <h1>Mes réservations</h1>
       <% if current_user.transactions.count == 0 %>
-        <h3><%= current_user.first_name %>, vous n'avez pas encore effectué de réservations.</h3>
+        <h3><%= current_user.first_name %>, vous n'avez pas encore effectué de réservations</h3>
       <% else %>
-        <h3><%= current_user.first_name %>, vous avez effectué de <%= current_user.transactions.count %> réservations.</h3>
+        <h3><%= current_user.first_name %>, vous avez effectué de <%= current_user.transactions.count %> réservations</h3>
 
         <% @transactions.each do |t| %>
           <div class="transaction" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path t.piece.photos.last.key %>)">
             <div class="card-trip-infos">
               <div>
                 <h2><%= t.piece.name %> <i>(<%= t.piece.artist%>)</i></h2>
-                <p>Durée de la location: <%= t.start %> au <%= t.end %>
+                <% if (t.end - t.start).to_i > 1 %>
+                  <p>Durée de la location: <%= (t.end - t.start).to_i %> jours</p>
+                <% else %>
+                  <p>Durée de la location: <%= (t.end - t.start).to_i %> jour</p>
+                <% end %>
                 <p>Type d'oeuvre: <%= t.piece.category%>, Disponibilité: <%= t.piece.status%></p>
                 <p>Propriétaire : <%= t.piece.owner.first_name %> <%= t.piece.owner.last_name %></p>
                 <%= link_to "",transaction_path(t) %>
               </div>
               <%= profile_image(t.piece.owner, class: "card-trip-user avatar-bordered") %>
-              <h2 class="card-trip-pricing"><%= t.piece.price %> €</h2>
+              <h2 class="card-trip-pricing"><%= (t.end - t.start).to_i * t.piece.price %> €</h2>
             </div>
           </div>
         <% end %>
     </div>
+
     <div class="droite">
       <h3>Total de vos réservations</h3>
-      <p>Total H.T. : <%= @total %> €</p>
-      <p>Montant TVA : <%= ((@total * 20.6) / 100).round(2)%> € </p>
-      <p>Total T.T.C. : <b><%= (@total * 1.206).round(2)%> € </b></p>
+
+        <% @transactions.each_with_index do |t,i| %>
+          <p>Réservation <%= i+1 %> : <%= (t.end - t.start).to_i * t.piece.price%> €</p>
+        <% end %>
+
+      <p id="ht">Total H.T. : <%= @total.round(2) %> €</p>
     </div>
-    <% end %>
+
+      <% end %>
 </div>
 
 
