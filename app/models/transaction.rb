@@ -11,9 +11,9 @@ class Transaction < ApplicationRecord
   private
 
   def end_date_after_start_date
-    return if end.blank? || start.blank?
+    return if :end.blank? || :start.blank?
 
-    if end < start
+    if :end < :start
       errors.add(:end, "must be after the start date")
     end
  end
