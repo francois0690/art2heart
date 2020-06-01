@@ -34,6 +34,7 @@ class TransactionsController < ApplicationController
   def new
     @transaction = Transaction.new
     @piece = Piece.find(params[:piece_id])
+    @transaction.piece = @piece
   end
 
   def show

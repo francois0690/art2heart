@@ -5,4 +5,10 @@ class Piece < ApplicationRecord
   has_many_attached :photos
   validates :category, inclusion: { in: %w(peinture sculpture photo autres),
       :message => "%{value} n'est pas une cathégorie valide" }
+
+  def unavailable_dates
+    transactions.pluck(:start, :end).map do |range|
+      { from: range[0], to: range[1] }
+    end
+  end
 end
