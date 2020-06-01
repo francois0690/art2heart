@@ -17,9 +17,6 @@
     <% else %>
       <h1>les dernières oeuvres en magasin</h1>
     <% end %>
-
-
-
     <div class="oeuvres">
         <% pieces.each do |p| %>
           <%= link_to piece_path(p) do %>
