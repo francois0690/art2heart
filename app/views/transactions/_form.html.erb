@@ -1,6 +1,8 @@
-<%= simple_form_for [ @piece, @transaction ] do |f| %>
-  <%= f.input :start, order: [:day, :month, :year] %>
-  <%= f.input :end, order: [:day, :month, :year] %> 
+
+<%= simple_form_for([@piece, @transaction]) do |f| %>
+  <%= f.input :start, as: :string, label: "Dates", placeholder: "From", wrapper_html: { class: "inline_field_wrapper" } %>
+  <%= f.input :end, as: :string, label: '&nbsp;'.html_safe, placeholder: "To", disabled: true, wrapper_html: { class: "inline_field_wrapper" } %>
   <%= f.input :status, collection: %w(demande acceptee annulee)%>
-  <%= f.submit %>
+  <%= f.submit "reserver", class: "btn btn-primary btn-lg btn-block btn-booking" %>
 <% end %>
+ 
