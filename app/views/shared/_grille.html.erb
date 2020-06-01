@@ -1,17 +1,24 @@
 <div class="grille">
     <% if user_signed_in?  %>
-      <h1>Mes oeuvres</h1>
 
-          <% if current_user.pieces.count == 0 %>
-            <h3>Vous n'avez pas encore ajouté d'oeuvre à votre collection</h3>
+          <% if current_user.pieces == pieces %>
+
+            <h1>Mes oeuvres</h1>
+              <% if current_user.pieces.count == 0 %>
+
+                <h3>Vous n'avez pas encore ajouté d'oeuvre à votre collection</h3>
+              <% else %>
+                <h3>Vous avez <%= current_user.pieces.count %> oeuvres dans votre collection</h3>
+              <% end %>
           <% else %>
-            <h3>Vous avez <%= current_user.pieces.count %> oeuvres dans votre collection</h3>
+            <h1>les dernières oeuvres en magasin</h1>
           <% end %>
 
-
     <% else %>
-          <h1>les dernières oeuvres en magasin</h1>
+      <h1>les dernières oeuvres en magasin</h1>
     <% end %>
+
+
 
     <div class="oeuvres">
         <% pieces.each do |p| %>
