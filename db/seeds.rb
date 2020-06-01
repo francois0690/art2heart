@@ -65,7 +65,7 @@ p1.name ="Mona Lisa"
 p1.artist ="Léonard de Vinci"
 p1.price = 425
 p1.status ="available"
-p1.category = "tableau"
+p1.category = "peinture"
 p1.photos.attach(io: f1, filename: 'Mona_Lisa.jpg', content_type: 'image/jpg')
 p1.save!
 # p1.photos.attached?
@@ -77,7 +77,7 @@ p2.name ="La création d'Adam"
 p2.artist ="Michel-Ange"
 p2.price = 512
 p2.status ="available"
-p2.category = "tableau"
+p2.category = "peinture"
 p2.photos.attach(io: f2, filename: 'La_creation_d_Adam.jpg', content_type: 'image/jpg')
 p2.save!
 # p p2.photos.attached?
@@ -89,7 +89,7 @@ p3.name ="Les Nymphéas"
 p3.artist ="Claude Monet"
 p3.price = 147
 p3.status ="available"
-p3.category = "tableau"
+p3.category = "peinture"
 p3.photos.attach(io: f3, filename: 'Nymphéas.jpg', content_type: 'image/jpg')
 p3.save!
 # p p3.photos.attached?
@@ -101,7 +101,7 @@ p4.name ="La Jeune Fille à la perle"
 p4.artist ="Johannes Vermeer"
 p4.price = 65
 p4.status ="not available"
-p4.category = "tableau"
+p4.category = "peinture"
 p4.photos.attach(io: f4, filename: 'La_jeune_fille_a_la_perle.jpg', content_type: 'image/jpg')
 p4.save!
 # p p4.photos.attached?
