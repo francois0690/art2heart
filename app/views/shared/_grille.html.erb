@@ -1,26 +1,28 @@
 <div class="grille">
-    <% if current_user.pieces == pieces %>
+    <% if user_signed_in?  %>
       <h1>Mes oeuvres</h1>
 
-      <% if current_user.pieces.count == 0 %>
-        <h3>Vous n'avez pas encore ajouté d'oeuvre à votre collection</h3>
-      <% else %>
-        <h3>Vous avez <%= current_user.pieces.count %> oeuvres dans votre collection</h3>
-      <% end %>
+          <% if current_user.pieces.count == 0 %>
+            <h3>Vous n'avez pas encore ajouté d'oeuvre à votre collection</h3>
+          <% else %>
+            <h3>Vous avez <%= current_user.pieces.count %> oeuvres dans votre collection</h3>
+          <% end %>
 
 
     <% else %>
-      <h1>Les dernières oeuvres en magasin</h1>
+          <h1>les dernières oeuvres en magasin</h1>
     <% end %>
-      <div class="oeuvres">
-          <% pieces.each do |p| %>
-            <%= link_to piece_path(p) do %>
-              <div class="oeuvre" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path p.photos.first.key ,height: 150, width: 150 %>)">
-                <h2><%= p.name %></h2>
-                <p><i><%= p.artist%></i></p>
-                <h3>Louez-moi à partir de <%= p.price %> €/jour</h3>
-              </div>
-            <% end %>
+
+    <div class="oeuvres">
+        <% pieces.each do |p| %>
+          <%= link_to piece_path(p) do %>
+            <div class="oeuvre" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path p.photos.first.key ,height: 250, width: 350, crop: :fill, gravity: :face %>)">
+              <h2><%= p.name %></h2>
+              <p><i><%= p.artist%></i></p>
+              <h3>Louez-moi à partir de <%= p.price %> €/jour</h3>
+            </div>
           <% end %>
-      </div>
+        <% end %>
+    </div>
+
 </div>
