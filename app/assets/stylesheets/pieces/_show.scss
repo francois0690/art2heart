@@ -7,6 +7,9 @@
 
   justify-content: space-between;
 }
+.container-button {
+  margin-top: 16px;
+}
 
  .border-radius-10 {
   border-radius: 10px;
@@ -14,10 +17,14 @@
 
 
 .black {
+  box-shadow: 0px 2px 7px rgba(0,0,0,0.25);
   color: black !important;
+  border-radius: 18px;
+  padding: 10px;
 }
 
 .container-text {
+  margin-bottom: 50px;
   display: flex;
   justify-content: space-between;
 }
@@ -29,7 +36,7 @@
   display: flex;
   justify-content: flex-start;
 }
-.prix {
+.info-prix {
   padding-left: 100px;
   text-align: right;
   font-weight: bold;
@@ -42,4 +49,10 @@
 }
 .piece-name {
   padding-top: 16px;
+}
+
+.btn {
+  box-shadow: 0px 2px 7px rgba(0,0,0,0.25);
+  padding-left: 30px;
+  padding-right: 30px;
 }
