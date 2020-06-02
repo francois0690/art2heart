@@ -26,7 +26,7 @@
   <div class="container-actions">
 
     <div class="container-actions-link">
-      <%= link_to "retour aux pièces", pieces_path, class: "black" %>
+      <%= link_to "retour ", root_path, class: "black" %>
       <%= link_to "reserver", new_piece_transaction_path(@piece), class: "black" %>
       <% if user_signed_in?  %>
          <% if current_user == @piece.owner %>
