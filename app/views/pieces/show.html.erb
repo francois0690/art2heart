@@ -5,29 +5,26 @@
 
   <div class="container-text">
       <div class="container-infos-left">
-    <h1 class="piece-name"><%= @piece.name  %></h1>
-    <div class="split mb-3"></div>
-    <div class="container-infos-categories">
-      <div class="category">
-        <p><%= "Category : #{@piece.category}" %></p>
-      </div>
-      <div class="info-prix">
-        <p><%= "#{@piece.price} €" %></p>
-      </div>
+        <h1 class="piece-name"><%= @piece.name  %></h1>
 
-    </div>
-
-    </div>
+          <div class="container-infos-categories">
+            <div class="category">
+              <p><%= "Category : #{@piece.category}" %></p>
+            </div>
+              <div class="info-prix">
+                <p><%= "#{@piece.price} €" %></p>
+              </div>
+          </div>
+      </div>
   </div>
-
 
 
 
   <div class="container-actions">
 
     <div class="container-actions-link">
-      <%= link_to "retour ", root_path, class: "black" %>
-      <%= link_to "reserver", new_piece_transaction_path(@piece), class: "black" %>
+      <%= link_to "Retour ", root_path, class: "black" %>
+      <%= link_to "Réserver", new_piece_transaction_path(@piece), class: "black" %>
       <% if user_signed_in?  %>
          <% if current_user == @piece.owner %>
          <%= link_to 'modifier', edit_piece_path(@piece), class: "black" %>

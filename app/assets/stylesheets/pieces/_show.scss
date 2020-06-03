@@ -6,6 +6,9 @@
 .container-actions {
 
   justify-content: space-between;
+  a {
+    text-decoration: none;
+  }
 }
 .container-button {
   margin-top: 16px;
@@ -30,7 +33,7 @@
 }
 
 .container-infos-left {
-  width: 400px;
+  width: 600px;
 }
 .container-infos-categories{
   display: flex;
@@ -49,6 +52,15 @@
 }
 .piece-name {
   padding-top: 16px;
+  margin-bottom: 16px;
+
+
+  color: black;
+  border-bottom: 2px solid rgba(0,0,0,.15);
+  font-weight: bold;
+  // margin: 0;
+
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
 }
 
 .btn {
