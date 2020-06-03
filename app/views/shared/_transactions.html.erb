@@ -24,7 +24,19 @@
                 <%= link_to "",transaction_path(t) %>
               </div>
               <%= profile_image(t.piece.owner, class: "card-trip-user avatar-bordered",width: 40, height: 40, crop: :fill , gravity: :face) %>
-              <h2 class="card-trip-pricing"><%= (t.end - t.start).to_i * t.piece.price %> €</h2>
+              <div class="card-trip-pricing">
+                <%= link_to transaction_path(t),
+                  id: "delete",
+                  method: :delete,
+                  data: { confirm: "Voulez-vous annuler la réservation de :#{t.piece.name}?" } do %>
+                  <i class="fas fa-trash"></i>
+                  <% end %>
+
+                <%= link_to edit_transaction_path(t), id: "edit" do %>
+                 <i class="far fa-edit"></i>
+                 <% end %>
+                <h2><%= (t.end - t.start).to_i * t.piece.price %> €</h2>
+              </div>
             </div>
           </div>
         <% end %>

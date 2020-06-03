@@ -108,7 +108,7 @@ background-color: rgba(250,250,250,.7);
   padding: 16px;
   display: flex;
   justify-content: space-between;
-  // align-items: flex-end;
+  align-items: flex-end;
   position: relative;
   }
 
@@ -121,24 +121,48 @@ background-color: rgba(250,250,250,.7);
   text-shadow: 2px 2px 3px rgba(0,0,0,0.5);
   }
 
-
-#delete-icon {
-  position: absolute;
-  right: 32px;
-  top: 10px;
-  width: 30px;
-  opacity: 1;
-}
-
-#edit-icon {
-  position: absolute;
-  right: 64px;
-  top: 10px;
-  width: 30px;
-  opacity: 1;
-}
-
-.text {
+.card-trip-pricing {
+  // width: 100px;
   display: flex;
-  flex-direction: flex-end;
+  align-items: flex-end;
+  h2 {
+    flex-shrink: 0;
+    margin-left: 10px;
+  }
+}
+
+#delete {
+  position: static;
+  margin: 0 10px;
+  color: red;
+  opacity: 0;
+  :hover {
+    opacity: 1;
+  }
+}
+
+#edit {
+  position: static;
+  margin: 0 10px;
+  color: white;
+  opacity: 0;
+}
+
+#edit:hover {
+  opacity: 1 !important;
+}
+
+#delete:hover {
+  opacity: 1 !important;
+}
+
+.card-trip-infos:hover {
+  #delete {
+    opacity: 0.5;
+    transition: ease .3s;
+  }
+  #edit {
+    opacity: 0.5;
+    transition: ease .3s;
+  }
 }
