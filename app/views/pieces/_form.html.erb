@@ -5,7 +5,7 @@
   <%= f.input :category %>
   <%= f.input :price %>
   <%= f.input :photos, hint: "Votre oeuvre", label:'Selectionner vos photo', as: :file, input_html: { multiple: true, accept: "image/*" }%>
-  <%= f.submit %>
+  <%= f.submit "Valider", class: "btn btn-ghost btn-lg btn-block btn-booking" %>
 <% end %>
 </div>
 
