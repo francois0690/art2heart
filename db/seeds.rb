@@ -124,22 +124,22 @@ p "#{Piece.count} pièces créées"
 t1 = Transaction.new
 t1.piece = p1
 t1.user = g
-t1.start = "2020-05-17"
-t1.end = "2020-06-25"
+t1.date_start = "2020-07-17"
+t1.date_end = "2020-07-25"
 t1.save!
 
 t2 = Transaction.new
 t2.piece = p2
 t2.user = g
-t2.start = "2020-06-05"
-t2.end = "2020-06-16"
+t2.date_start = "2020-07-05"
+t2.date_end = "2020-07-16"
 t2.save!
 
 t3 = Transaction.new
 t3.piece = p5
 t3.user = g
-t3.start = "2020-06-20"
-t3.end = "2020-06-25"
+t3.date_start = "2020-07-20"
+t3.date_end = "2020-07-25"
 t3.save!
 
 

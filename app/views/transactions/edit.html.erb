@@ -1,4 +1,11 @@
 <h1>Transactions#edit</h1>
 <p>Find me in app/views/transactions/edit.html.erb</p>
-<%= render "form", transaction: @ptransaction, piece: @piece %>
+<div id='piece-booking-dates' data-unavailable="<%= @transaction.piece.unavailable_dates.to_json %>">
+  <%= simple_form_for([@transaction]) do |f| %>
+    <%= f.input :date_start, as: :string, label: "Dates", placeholder: "à partir de", wrapper_html: {  class: "inline_field_wrapper" } %>
+    <%= f.input :date_end, as: :string, label: '&nbsp;'.html_safe, placeholder: "jusqu'à", disabled: true, wrapper_html: { class: "inline_field_wrapper" } %>
+    <%= f.input :status, collection: %w(demande acceptee annulee)%>
+    <%= f.submit "reserver", class: "btn btn-primary btn-lg btn-block btn-booking" %>
+  <% end %>
+</div>
 <%= link_to "annuler", transaction_path(@transaction) %>
