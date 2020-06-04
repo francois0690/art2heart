@@ -4,7 +4,7 @@ const name = document.querySelector(".piece-name").innerText
 
 
 const inject = (text) => {
-  document.querySelector("#test").innerText = text
+  document.querySelector("#wikipedia").innerText = text
 }
 
 const wikiSearch = (query) => {

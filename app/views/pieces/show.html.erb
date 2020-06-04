@@ -1,8 +1,12 @@
 <div class="container-img mt-3">
-  <div id="test">
 
+  <div class="d-flex">
+      <%= render 'shared/carousel', piece: @piece %>
+      <div class="description">
+        <h2>Description de l'oeuvre : </h2>
+        <p id="wikipedia"></p>
+      </div>
   </div>
-  <%= render 'shared/carousel', piece: @piece %>
 
   <div class="container-text">
       <div class="container-infos-left">
