@@ -35,3 +35,16 @@ document.addEventListener('turbolinks:load', () => {
     // initSelect2();
     toggleDateInputs();
 });
+
+import Typed from 'typed.js';
+var options = {
+  strings: ["Le site qui vous permet d'acceder aux  <mark>plus belles oeuvres d'art</mark>.",
+  "Le site qui vous permet d'acceder aux  <mark>tableaux de maître</mark>.",
+  "Le site qui vous permet d'acceder aux  <mark>sculpture d'exception</mark>.",
+  "rentabiliser vos investissement d'Art"],
+  typeSpeed: 30,
+  loop: true,
+  smartBackspace: true
+};
+
+var typed = new Typed('#home-title', options);
