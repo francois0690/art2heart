@@ -31,6 +31,7 @@ class PiecesController < ApplicationController
 
   def show
     set_piece
+    # https://fr.wikipedia.org/w/api.php?action=query&format=json&uselang=user&prop=extracts&list=&titles="#{@piece.name}"&exsentences=3&exintro=1&explaintext=1
   end
 
   def update
