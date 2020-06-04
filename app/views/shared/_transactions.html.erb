@@ -17,10 +17,10 @@
                   <div class="card-trip-infos">
 
                       <h2><%= t.piece.name %> <i>(<%= t.piece.artist%>)</i></h2>
-                      <% if (t.end - t.start).to_i > 1 %>
-                        <p>Durée de la location: <%= (t.end - t.start).to_i %> jours</p>
+                      <% if (t.date_end - t.date_start).to_i > 1 %>
+                        <p>Durée de la location: <%= (t.date_end - t.date_start).to_i %> jours</p>
                       <% else %>
-                        <p>Durée de la location: <%= (t.end - t.start).to_i %> jour</p>
+                        <p>Durée de la location: <%= (t.date_end - t.date_start).to_i %> jour</p>
                       <% end %>
                       <p>Type d'oeuvre: <%= t.piece.category%></p>
                       <p>Propriétaire : <%= t.piece.owner.first_name %> <%= t.piece.owner.last_name %></p>
@@ -39,7 +39,7 @@
                             <i class="fas fa-trash"></i>
                             <% end %>
 
-                          <h2>  <%= (t.end - t.start).to_i * t.piece.price %> €</h2>
+                          <h2>  <%= (t.date_end - t.date_start).to_i * t.piece.price %> €</h2>
                         </div>
                   </div>
               </div>
@@ -51,7 +51,7 @@
       <h3>Total de vos réservations</h3>
 
         <% @transactions.each_with_index do |t,i| %>
-          <p>Réservation <%= i+1 %> : <%= (t.end - t.start).to_i * t.piece.price%> €</p>
+          <p>Réservation <%= i+1 %> : <%= (t.date_end - t.date_start).to_i * t.piece.price%> €</p>
         <% end %>
 
       <p id="ht">Montant total : <%= @total.round(2) %> €</p>
