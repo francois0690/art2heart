@@ -1,5 +1,4 @@
-<h1>Transactions#edit</h1>
-<p>Find me in app/views/transactions/edit.html.erb</p>
+
 <div id='piece-booking-dates' data-unavailable="<%= @transaction.piece.unavailable_dates.to_json %>">
   <%= simple_form_for([@transaction]) do |f| %>
     <%= f.input :date_start, as: :string, label: "Dates", placeholder: "à partir de", wrapper_html: {  class: "inline_field_wrapper" } %>
