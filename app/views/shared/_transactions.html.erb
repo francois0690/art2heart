@@ -14,17 +14,17 @@
             <div class="card-trip-infos">
               <div>
                 <h2><%= t.piece.name %> <i>(<%= t.piece.artist%>)</i></h2>
-                <% if (t.end - t.start).to_i > 1 %>
-                  <p>Durée de la location: <%= (t.end - t.start).to_i %> jours</p>
+                <% if (t.date_end - t.date_start).to_i > 1 %>
+                  <p>Durée de la location: <%= (t.date_end - t.date_start).to_i %> jours</p>
                 <% else %>
-                  <p>Durée de la location: <%= (t.end - t.start).to_i %> jour</p>
+                  <p>Durée de la location: <%= (t.date_end - t.date_start).to_i %> jour</p>
                 <% end %>
                 <p>Type d'oeuvre: <%= t.piece.category%>, Disponibilité: <%= t.piece.status%></p>
                 <p>Propriétaire : <%= t.piece.owner.first_name %> <%= t.piece.owner.last_name %></p>
                 <%= link_to "",transaction_path(t) %>
               </div>
               <%= profile_image(t.piece.owner, class: "card-trip-user avatar-bordered",width: 40, height: 40, crop: :fill , gravity: :face) %>
-              <h2 class="card-trip-pricing"><%= (t.end - t.start).to_i * t.piece.price %> €</h2>
+              <h2 class="card-trip-pricing"><%= (t.date_end - t.date_start).to_i * t.piece.price %> €</h2>
             </div>
           </div>
         <% end %>
@@ -34,7 +34,7 @@
       <h3>Total de vos réservations</h3>
 
         <% @transactions.each_with_index do |t,i| %>
-          <p>Réservation <%= i+1 %> : <%= (t.end - t.start).to_i * t.piece.price%> €</p>
+          <p>Réservation <%= i+1 %> : <%= (t.date_end - t.date_start).to_i * t.piece.price%> €</p>
         <% end %>
 
       <p id="ht">Total H.T. : <%= @total.round(2) %> €</p>

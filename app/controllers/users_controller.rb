@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @transactions = current_user.transactions.all
     @total = 0
     current_user.transactions.all.each do |t|
-       @total += (t.end - t.start).to_i * t.piece.price
+       @total += (t.date_end - t.date_start).to_i * t.piece.price
        p @total
     end
 

@@ -1,8 +1,8 @@
 import flatpickr from 'flatpickr';
 
 export default function toggleDateInputs() {
-    const startDateInput = document.querySelector("#transaction_start");
-    const endDateInput = document.querySelector('#transaction_end');
+    const startDateInput = document.querySelector("#transaction_date_start");
+    const endDateInput = document.querySelector('#transaction_date_end');
     if (startDateInput && endDateInput) {
         const unvailableDates = JSON.parse(document.querySelector('#piece-booking-dates').dataset.unavailable)
         flatpickr(startDateInput, {

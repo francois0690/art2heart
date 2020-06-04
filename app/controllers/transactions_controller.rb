@@ -6,7 +6,6 @@ class TransactionsController < ApplicationController
     @piece = Piece.find(params[:piece_id])
     @transaction.piece = @piece
     @transaction.user = current_user
-    @transaction.save
     if @transaction.save
       redirect_to transactions_path
     else
@@ -34,7 +33,6 @@ class TransactionsController < ApplicationController
   def new
     @transaction = Transaction.new
     @piece = Piece.find(params[:piece_id])
-    @transaction.piece = @piece
   end
 
   def show
@@ -48,11 +46,12 @@ class TransactionsController < ApplicationController
   private
 
   def transaction_params
-    params.require(:transaction).permit(:start, :end, :piece_id, :status)
+    params.require(:transaction).permit(:date_start, :date_end, :piece_id, :status)
   end
 
   def set_transaction
     @transaction = Transaction.find(params[:id])
+    @piece = @transaction.piece
   end
 
 end
