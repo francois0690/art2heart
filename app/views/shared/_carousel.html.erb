@@ -1,13 +1,16 @@
 <div class="pieces">
-  
+
   <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="4"></li>
-
+      <% if piece.photos.count > 1 %>
+        <% piece.photos.each_with_index  do |photo, i| %>
+          <% if i.zero? %>
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+          <% else %>
+            <li data-target="#carouselExampleCaptions" data-slide-to=<%= i %>></li>
+          <% end %>
+        <% end %>
+      <% end %>
     </ol>
     <div class="carousel-inner">
       <% piece.photos.each_with_index  do |photo, i| %>
@@ -20,14 +23,18 @@
           </div>
         <%end %>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Précedent</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Suivant</span>
-      </a>
+
+      <% if piece.photos.count > 1 %>
+
+        <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Précedent</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Suivant</span>
+        </a>
+      <% end %>
     </div>
 
 

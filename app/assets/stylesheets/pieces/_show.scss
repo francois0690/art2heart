@@ -6,6 +6,12 @@
 .container-actions {
 
   justify-content: space-between;
+  a {
+    text-decoration: none;
+  }
+}
+.container-button {
+  margin-top: 16px;
 }
 
  .border-radius-10 {
@@ -14,5 +20,51 @@
 
 
 .black {
+  box-shadow: 0px 2px 7px rgba(0,0,0,0.25);
   color: black !important;
+  border-radius: 18px;
+  padding: 10px;
+}
+
+.container-text {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-infos-left {
+  width: 600px;
+}
+.container-infos-categories{
+  display: flex;
+  justify-content: flex-start;
+}
+.info-prix {
+  padding-left: 100px;
+  text-align: right;
+  font-weight: bold;
+
+}
+.split{
+  background-color: black;
+  height: 1px;
+  width: 100%;
+}
+.piece-name {
+  padding-top: 16px;
+  margin-bottom: 16px;
+
+
+  color: black;
+  border-bottom: 2px solid rgba(0,0,0,.15);
+  font-weight: bold;
+  // margin: 0;
+
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+}
+
+.btn {
+  box-shadow: 0px 2px 7px rgba(0,0,0,0.25);
+  padding-left: 30px;
+  padding-right: 30px;
 }

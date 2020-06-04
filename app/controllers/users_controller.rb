@@ -8,7 +8,7 @@ class UsersController < ApplicationController
        p @total
     end
 
-    @pieces =  Piece.order('created_at DESC').limit(6)
+    @pieces =  Piece.order('created_at DESC').limit(100)
   end
 
   def profil
