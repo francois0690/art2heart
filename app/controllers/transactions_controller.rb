@@ -40,7 +40,7 @@ class TransactionsController < ApplicationController
 
   def update
     @transaction.update(transaction_params)
-    redirect_to transaction_path(@transaction)
+    redirect_to root_path
   end
 
   private
