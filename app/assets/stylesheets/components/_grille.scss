@@ -33,7 +33,7 @@
 
 .oeuvres {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 32px;
 
   a {
@@ -52,7 +52,7 @@
 
   background-size: cover;
   background-position: center;
-  height: 170px;
+  height: 270px;
 
   padding: 32px 16px;
   opacity: 1;

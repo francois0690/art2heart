@@ -3,7 +3,7 @@
   <div class="d-flex">
       <%= render 'shared/carousel', piece: @piece %>
       <div class="description">
-        <h2>Description de l'oeuvre : </h2>
+        <!-- <h2>Description de l'oeuvre : </h2> -->
         <p id="wikipedia"></p>
       </div>
   </div>
@@ -23,12 +23,9 @@
       </div>
   </div>
 
-
-
   <div class="container-actions">
-
     <div class="container-actions-link">
-      <%= link_to "Retour ", root_path, class: "black" %>
+      <%= link_to "Retour", root_path, class: "black" %>
       <% if user_signed_in?  %>
       <%= link_to "Réserver", new_piece_transaction_path(@piece), class: "black" %>
          <% if current_user == @piece.owner %>
