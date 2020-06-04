@@ -1,7 +1,12 @@
 <div class="container-img mt-3">
 
-
-  <%= render 'shared/carousel', piece: @piece %>
+  <div class="d-flex">
+      <%= render 'shared/carousel', piece: @piece %>
+      <div class="description">
+        <h2>Description de l'oeuvre : </h2>
+        <p id="wikipedia"></p>
+      </div>
+  </div>
 
   <div class="container-text">
       <div class="container-infos-left">
@@ -44,4 +49,4 @@
   </div>
 </div>
 
-
+<%= javascript_pack_tag 'wikipedia' %>
