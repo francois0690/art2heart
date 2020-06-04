@@ -4,7 +4,14 @@ const name = document.querySelector(".piece-name").innerText
 
 
 const inject = (text) => {
-  document.querySelector("#wikipedia").innerText = text
+  if (text === undefined || text === "") {
+    console.log("croute")
+    document.querySelector("#wikipedia").innerText = "Dommage votre croute n'est pas sur Wikipedia... 🤷‍♂️"
+  } else {
+    console.log("wiki")
+    console.log(text)
+    document.querySelector("#wikipedia").innerText = text
+  }
 }
 
 const wikiSearch = (query) => {
