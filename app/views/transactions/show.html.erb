@@ -3,7 +3,7 @@
   <h2><%= @transaction.piece.artist %></h2>
 
 <%= render 'shared/carousel', piece: @transaction.piece %>
-  
+
 <div class="container-text my-4">
   <div class="container-infos">
   <p><%= "début de location : #{@transaction.date_start}" %></p>
@@ -13,12 +13,12 @@
 </div>
 
 <div class= "d-inline-flex">
-<%= button_to "retour aux réservatons", transactions_path, method: :get, class: "p-1 m-1" %>
+<%= button_to "retour aux réservations", transactions_path, method: :get, class: "btn btn-ghost" %>
 
-<%= button_to 'modifier', edit_transaction_path(@transaction), method: :get,class: "p-1 m-1"%> 
+<%= button_to 'modifier', edit_transaction_path(@transaction), method: :get,class: "btn btn-ghost"%>
 
 <%= button_to 'annuler la réservation', transaction_path(@transaction),
         method: :delete,
         data: { confirm: "Voulez-vous annuler la réservation de :#{@transaction.piece.name}?" },
-        class: "p-1 m-1" %>
+        class: "btn btn-ghost" %>
 </div>
