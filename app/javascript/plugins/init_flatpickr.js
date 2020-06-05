@@ -7,7 +7,7 @@ export default function toggleDateInputs() {
         const unvailableDates = JSON.parse(document.querySelector('#piece-booking-dates').dataset.unavailable)
         flatpickr(startDateInput, {
             minDate: 'today',
-            dateFormat: 'd-m-Y',
+            dateFormat: 'Y-m-d',
             disable: unvailableDates,
             onChange: function(selectedDates, selectedDate) {
                 if (selectedDate === '') {
@@ -21,7 +21,7 @@ export default function toggleDateInputs() {
         });
         const endDateCalendar =
             flatpickr(endDateInput, {
-                dateFormat: 'd-m-Y',
+                dateFormat: 'Y-m-d',
                 disable: unvailableDates,
             }, );
     }

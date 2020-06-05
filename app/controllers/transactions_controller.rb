@@ -7,7 +7,7 @@ class TransactionsController < ApplicationController
     @transaction.piece = @piece
     @transaction.user = current_user
     if @transaction.save
-      redirect_to transactions_path
+      redirect_to root_path
     else
       render :new
     end
@@ -15,7 +15,7 @@ class TransactionsController < ApplicationController
 
   def destroy
     @transaction.destroy
-    redirect_to transactions_path
+    redirect_to root_path
   end
 
   def edit
