@@ -9,7 +9,7 @@
 
   <div class="show-info">
       <div class="info-piece">
-        <h1><%= @piece.name %></h1>
+        <h1 id="piece-name"><%= @piece.name %></h1>
         <h2>Artiste : <%= @piece.artist %></h2>
         <h2>Propriétaire : <%= @piece.owner.first_name %> <%= @piece.owner.last_name %></h2>
         <h2>Prix par journée de location : <%= @piece.price %> €</h2>
