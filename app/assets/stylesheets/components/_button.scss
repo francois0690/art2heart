@@ -6,11 +6,18 @@
   opacity: 0.8;
   background-color: white;
   transition: opacity 0.3s ease;
+  border-radius: 4px;
+
+  &:hover {
+  opacity: 1;
+    &::after {
+      transition: opacity 0.5s ease;
+    }
+
+  }
 }
 
-.btn-ghost:hover {
-  opacity: 1;
-}
+
 
 .btn-flat {
   color: white;
