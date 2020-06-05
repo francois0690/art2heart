@@ -1,6 +1,14 @@
+.show-img-description {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
 .container-img{
-  margin-right: auto;
-  margin-left: auto;
+  // margin-right: auto;
+  // margin-left: auto;
+
 }
 
 .container-actions {
@@ -35,12 +43,14 @@
   width: 600px;
 }
 .description {
-  width: 600px;
-  margin: 0px 50px;
-  padding: 30px;
-  background-color: rgba(0,0,0,.15);
-  border: 2px solid rgba(0,0,0,.15);
-  border-radius: 10px;
+  width: 40%;
+  margin: 0px 24px;
+  padding: 24px;
+  text-align: justify;
+  // background-color: rgba(0,0,0,.15);
+  // border: 1px solid rgba(0,0,0,.15);
+  box-shadow: 0 1px 4px rgba(0,0,0,.1);
+  border-radius: 1px;
 }
 .container-infos-categories{
   display: flex;
