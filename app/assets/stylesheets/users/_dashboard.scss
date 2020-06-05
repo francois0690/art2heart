@@ -1,12 +1,26 @@
 // SCSS pour Dashboard
-
-
-.container > h3 {
-    font-size : 20px;
+.container>h3 {
+    font-size: 20px;
     // background-color: white;
-
     font-weight: lighter;
     margin: 8px 0px;
     // text-shadow: 2px 2px 3px rgba(0,0,0,0.5);
-  }
+}
 
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: #333;
+    border-bottom: 4px solid transparent;
+    background-color: rgba(122, 122, 122, 0);
+    border-bottom: 3px solid #555555;
+}
+
+.nav-pills .nav-link {
+    text-transform: capitalize;
+    background-color: rgba(122, 122, 122, 0);
+    color: rgb(122, 122, 122);
+    &:hover,
+    &:focus {
+        color: #333;
+    }
+}

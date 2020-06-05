@@ -16,7 +16,7 @@
               <div class="transaction" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path t.piece.photos.first.key, width: 500, height: 300, crop: :fill, gravity: :face %>)">
                   <div class="card-trip-infos">
 
-                      <h2><%= t.piece.name %> <i>(<%= t.piece.artist%>)</i></h2>
+                      <h2><%= t.piece.name.upcase %> <i>(<%= t.piece.artist%>)</i></h2>
                       <% if (t.date_end - t.date_start).to_i > 1 %>
                         <p>Durée de la location: <%= (t.date_end - t.date_start).to_i %> jours</p>
                       <% else %>

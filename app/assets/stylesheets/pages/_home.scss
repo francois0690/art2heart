@@ -1,1 +1,17 @@
 // Specific CSS for your home-page
+#home-title {
+  text-align: center;
+  padding: 16px 0px;
+}
+
+#home-entete {
+  display: flex;
+  flex-direction: column;
+  margin-top: 48px;
+  border: 1px solid rgba(0,0,0,.1);
+  padding: 16px;
+  height: 230px;
+  border-radius: 2px;
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  background-color: rgba(240,240,240,.1);
+}
