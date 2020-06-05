@@ -42,7 +42,7 @@ var options = {
   "Le site qui vous permet d'accéder aux <mark>tableaux de maître</mark>",
   "Le site qui vous permet d'accéder aux <mark>sculptures d'exceptions</mark>",
   "Le site qui vous permet de <mark>rentabiliser vos investissements d'Art</mark>",
-  "Le site qui vous permet <mark>d'épater vos amis</mark>"],
+  "Le site qui vous permet <mark>d'épater vos amis</mark>" ],
   typeSpeed: 40,
   loop: true,
   smartBackspace: true
