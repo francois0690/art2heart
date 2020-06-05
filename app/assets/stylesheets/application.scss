@@ -14,12 +14,12 @@
 @import "users/dashboard";
 @import "pieces/show";
 body {
-    // background-color: black;
-    // height: 100vh;
+
     background-image: linear-gradient(rgba(200, 200, 200, 0.7), rgba(0, 0, 0, 0.1)), asset_url('back6.jpg');
+    // backdrop-filter: blur(2px);
     background-size: cover;
     background-attachment: fixed;
-    // background-position: bottom;
+
 }
 
 .my-container {
