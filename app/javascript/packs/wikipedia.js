@@ -1,4 +1,4 @@
-const name = document.querySelector(".info-piece").innerText;
+const name = document.querySelector("#piece-name").innerText;
 
 // document.addEventListener('turbolinks:load', () => {
 

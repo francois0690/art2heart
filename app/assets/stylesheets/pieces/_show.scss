@@ -6,13 +6,14 @@
 
 .show-image {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 24px;
 
 
 
   .show-image-wiki {
     flex-grow: 1;
+    max-width: 50%;
     margin: 0px 24px;
     padding: 24px;
     text-align: justify;
@@ -37,7 +38,7 @@
     margin-right: 24px;
 
     h1 {
-      text-transform: uppercase;
+      // text-transform: uppercase;
       font-size: 32px;
       padding-top: 16px;
       // margin-bottom: 16px;
