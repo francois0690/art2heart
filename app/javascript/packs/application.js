@@ -38,11 +38,12 @@ document.addEventListener('turbolinks:load', () => {
 
 import Typed from 'typed.js';
 var options = {
-  strings: ["Le site qui vous permet d'acceder aux  <mark>plus belles oeuvres d'art</mark>.",
-  "Le site qui vous permet d'acceder aux  <mark>tableaux de maître</mark>.",
-  "Le site qui vous permet d'acceder aux  <mark>sculpture d'exception</mark>.",
-  "rentabiliser vos investissement d'Art"],
-  typeSpeed: 30,
+  strings: ["Le site qui vous permet d'accéder aux <mark>plus belles oeuvres d'art</mark>",
+  "Le site qui vous permet d'accéder aux <mark>tableaux de maître</mark>",
+  "Le site qui vous permet d'accéder aux <mark>sculptures d'exceptions</mark>",
+  "Le site qui vous permet de <mark>rentabiliser vos investissements d'Art</mark>",
+  "Le site qui vous permet <mark>d'épater vos amis</mark>"],
+  typeSpeed: 40,
   loop: true,
   smartBackspace: true
 };
