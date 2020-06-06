@@ -15,15 +15,17 @@
     flex-grow: 1;
     max-width: 50%;
     margin: 0px 24px;
-    padding: 24px;
+    padding: 16px;
     text-align: justify;
     // width: 40%;
     // background-color: rgba(0,0,0,.15);
     // border: 1px solid rgba(0,0,0,.15);
     box-shadow: 0 1px 4px rgba(0,0,0,.1);
+    background-color: rgba(255,255,255,.25);
     border-radius: 1px;
 
     #wikipedia {
+      padding: 24px;
       color: black;
       font-size: 16px;
     }
@@ -33,9 +35,14 @@
 
 
 .show-info {
+   margin-right: 24px;
+   margin-top: 24px;
 
   .info-piece {
-    margin-right: 24px;
+    // margin-right: 24px;
+    // box-shadow: 0 1px 4px rgba(0,0,0,.1);
+    background-color: rgba(255,255,255,.25);
+    padding: 16px;
 
     h1 {
       // text-transform: uppercase;
