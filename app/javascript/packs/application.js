@@ -42,8 +42,7 @@ var options = {
         "<mark>tableaux de maître,</mark>",
         "<mark>sculptures d'exception...</mark>",
         "Rentabiliser vos investissements d'Art",
-        "Epater vos amis"
-    ],
+        "Epater vos amis"],
     typeSpeed: 40,
     loop: true,
     smartBackspace: true
