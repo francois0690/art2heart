@@ -18,10 +18,13 @@
   font-weight: 200;
   color: black;
   text-decoration-color: rgba(0,0,0,0);
-  transition: all .3s ease-in;
+  text-decoration: none;
+  opacity: 1;
+  transition: all 1.5s ease-in;
   }
 
   .logo-baseline:hover {
+    // opacity: 0;
     text-decoration: underline;
     text-decoration-color: rgba(0,0,0,1);
   }
