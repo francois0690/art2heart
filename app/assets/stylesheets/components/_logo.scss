@@ -1,0 +1,30 @@
+
+.logo {
+  position: absolute;
+  flex-direction: column;
+  margin-right: auto;
+  margin-left:auto;
+  top: 20px;
+  left: 0;
+  right: 0;
+  width: 300px;
+  z-index: 10;
+  text-align: center;
+
+
+  .logo-baseline {
+  font-family: 'Ginto Nord';
+  font-size: 12px;
+  font-weight: 300;
+  color: black;
+  text-decoration-color: rgba(0,0,0,0);
+  transition: all .3s ease-in;
+  }
+
+  .logo-baseline:hover {
+    text-decoration: underline;
+    text-decoration-color: rgba(0,0,0,1);
+  }
+
+}
+
