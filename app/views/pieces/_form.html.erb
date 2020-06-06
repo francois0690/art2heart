@@ -1,11 +1,21 @@
+
 <div class="form-container">
   <%= simple_form_for(@piece) do |f| %>
   <%= f.input :name %>
+  <%= link_to "rechercher sur Wikipedia", "#", id: "wikiBtn", class: "btn btn-ghost btn-lg btn-block btn-booking" %>
+  <br>
   <%= f.input :artist %>
   <%= f.select :category, collection: %w(peinture sculpture photo autres) %>
   <%= f.input :price %>
   <%= f.input :photos, hint: "Votre oeuvre", label:'Selectionner vos photo', as: :file, input_html: { multiple: true, accept: "image/*" }%>
   <%= f.submit "Valider", class: "btn btn-ghost btn-lg btn-block btn-booking" %>
 <% end %>
+<br>
 </div>
+<%= link_to "#", class: "btn btn-ghost btn-lg btn-block btn-booking", id: "btnPhoto" do %>
+   <i class="fas fa-plus-circle"></i>
+<% end %>
+<div id="wikiImg"></div>
 
+
+<%= javascript_pack_tag 'wikiImage' %>

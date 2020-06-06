@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   get 'my_pieces', to: 'pieces#my_pieces', as: 'my_pieces'
 
   patch 'profil/users_id', to: 'users#update_avatar', as: :update_avatar
+
 end
