@@ -9,7 +9,7 @@ en:
     failure:
       already_authenticated: "You are already signed in."
       inactive: "Your account is not activated yet."
-      invalid: "Invalid %{authentication_keys} or password."
+      invalid: "%{authentication_keys} invalide ou mauvais mot de passe."
       locked: "Your account is locked."
       last_attempt: "You have one more attempt before your account is locked."
       not_found_in_database: "Invalid %{authentication_keys} or password."
@@ -46,9 +46,9 @@ en:
       updated: "Your account has been updated successfully."
       updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again"
     sessions:
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
-      already_signed_out: "Signed out successfully."
+      signed_in: "Vous êtes loggué."
+      signed_out: "Vous êtes déloggué."
+      already_signed_out: "Vous êtes déloggué."
     unlocks:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
