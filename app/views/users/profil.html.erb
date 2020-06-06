@@ -1,11 +1,27 @@
-<h1>mon profil</h1>
-<%= link_to "changer mot de passe", edit_user_registration_path, class: "dropdown-item" %>
-<%= profile_image(current_user) %>
-<h3>ajouter une photo</h3>
 
-<%= simple_form_for(current_user, :url => update_avatar_path, method: 'patch') do |f| %>
-  <%= f.input :avatar, hint: "Votre photo", label:'Selectionner une photo', as: :file, input_html: { accept: "image/*" }%>
-  <%= f.submit %>
+<div class="flex d-flex justify-content-center mt-3 ">
+  <%= profile_image(current_user) %>
+</div>
+
+<%= simple_form_for(current_user, :url => update_avatar_path, method: 'patch' ) do |f| %>
+  <div class="form-container">
+      <%= f.input :first_name,
+                    required: true,
+                    autofocus: true,
+                    label:'Prénom',
+                    input_html: { autocomplete: "prénom" }%>
+      <%= f.input :last_name,
+                    required: true,
+                    autofocus: true,
+                    label:'Nom',
+                    input_html: { autocomplete: "nom" }%>
+      <%= f.input :avatar,
+                    label:'Selectionner une photo',
+                    as: :file, input_html: { accept: "image/*" }%>
+      <%= f.submit%>
+  </div>
 <% end %>
-
-<%= link_to "retour au dashboard", root_path , class: "btn btn-ghost"%>
+<div class="flex d-flex justify-content-center mt-3 ">
+  <%= link_to "changer mot de passe", edit_user_registration_path, class: "btn btn-ghost" %>
+  <%= link_to "retour au dashboard", root_path , class: "btn btn-ghost"%>
+</div>
