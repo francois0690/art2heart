@@ -6,13 +6,18 @@
 @font-face {
     font-family: 'Ginto Nord';
     src: url('GintoNord-Medium.woff2') format('woff2'),
-          url('GintoNord-Medium.woff') format('woff'),
-          url('GintoNord-Light.woff2') format('woff2'),
-          url('GintoNord-Light.woff') format('woff');
-    font-weight: 300;
+          url('GintoNord-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
+@font-face {
+    font-family: 'Ginto Nord Light';
+    src:  url('GintoNord-Light.woff2') format('woff2'),
+          url('GintoNord-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
 
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica Neue", "sans-serif";
