@@ -25,12 +25,14 @@ body {
     // backdrop-filter: blur(2px);
     background-size: cover;
     background-attachment: fixed;
-
 }
 
 .my-container {
     margin: 0 auto;
     width: 1300px;
+     position: relative;
+     min-height: 100%;
+
 }
 
 @media (max-width: 1200px) {
