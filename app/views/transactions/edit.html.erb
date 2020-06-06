@@ -6,4 +6,7 @@
     <%= f.submit "reserver", class: "btn btn-ghost btn-lg btn-block btn-booking" %>
   <% end %>
 </div>
-<%= link_to "annuler", transaction_path(@transaction) %>
+
+<div class="flex d-flex justify-content-center mt-5 ">
+<%= link_to "annuler", transaction_path(@transaction), class: "btn btn-lg btn-ghost" %>
+</div>
