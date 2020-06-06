@@ -1,6 +1,19 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Space+Mono:wght@400;700&display=swap');
+
+// Import local fonts
+@font-face {
+    font-family: 'Ginto Nord';
+    src: url('GintoNord-Medium.woff2') format('woff2'),
+          url('GintoNord-Medium.woff') format('woff'),
+          url('GintoNord-Light.woff2') format('woff2'),
+          url('GintoNord-Light.woff') format('woff');
+    font-weight: 300;
+    font-weight: 500;
+    font-style: normal;
+}
+
 // Define fonts for body and headers
 $body-font: "Work Sans", "Helvetica Neue", "sans-serif";
 $headers-font: "Nunito", "Helvetica Neue", "sans-serif";

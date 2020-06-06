@@ -1,3 +1,5 @@
+<%= render 'shared/logo' , pieces: @pieces%>
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "logo.jpg" %>
@@ -7,12 +9,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <%= link_to root_path do %>
-  <div class="text-center">
-    <%= image_tag "art2heart.png",  width: '140' %>
-    <p>la location d'oeuvres d'art 3.0</p>
-  </div>
-  <% end %>
+
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
@@ -23,8 +20,8 @@
         <li class="nav-item">
           <%= link_to "Catalogue", pieces_path, class: "nav-link" %>
         </li>
-        <li class="nav-item dropdown">
-          <%= profile_image(current_user, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
+        <li class="nav-item dropdown ">
+          <%= profile_image(current_user, class: "avatar dropdown-toggle nav-item", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false) %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Mes oeuvres", my_pieces_path, class: "dropdown-item" %>
             <%= link_to "Mes réservations", transactions_path, class: "dropdown-item" %>
