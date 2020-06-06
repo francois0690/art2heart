@@ -1,8 +1,6 @@
-<!-- <h3 >Heureux de vous revoir parmi nous <%= current_user.first_name %> !</h3> -->
-
 <ul class="nav-light nav nav-pills my-4" id="dashboard" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="resa-tab" data-toggle="tab" href="#resa" role="tab" aria-controls="resa" aria-selected="true">Mes reservations</a>
+    <a class="nav-link active" id="resa-tab" data-toggle="tab" href="#resa" role="tab" aria-controls="resa" aria-selected="true">Mes réservations</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" id="oeuvres-tab" data-toggle="tab" href="#oeuvres" role="tab" aria-controls="oeuvres" aria-selected="false">Mes oeuvres</a>
@@ -14,7 +12,7 @@
 </div>
 
 
-<div class="mt-4"> 
+<div class="mt-4">
   <%= render 'shared/grille' , pieces: @pieces%>
 </div>
 
