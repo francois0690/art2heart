@@ -1,42 +1,42 @@
 <div class="show-container">
 
   <div class="show-image">
-      <%= render 'shared/carousel', piece: @piece %>
-      <div class="show-image-wiki">
-        <p id="wikipedia"></p>
-      </div>
+    <%= render 'shared/carousel', piece: @piece %>
+    <div class="show-image-wiki">
+      <p id="wikipedia"></p>
+    </div>
   </div>
+
 
   <div class="show-info">
-      <div class="info-piece">
-        <h1 id="piece-name"><%= @piece.name %></h1>
-        <h2>Artiste : <%= @piece.artist %></h2>
-        <h2>Propriétaire : <%= @piece.owner.first_name %> <%= @piece.owner.last_name %></h2>
-        <h2>Prix par journée de location : <%= @piece.price %> €</h2>
-      </div>
+    <div class="info-piece">
+      <h1 id="piece-name"><%= @piece.name %></h1>
+      <h2>Artiste : <%= @piece.artist %></h2>
+      <h2>Propriétaire : <%= @piece.owner.first_name %> <%= @piece.owner.last_name %></h2>
+      <h2>Prix par journée de location : <%= @piece.price %> €</h2>
+    </div>
   </div>
 
-  <div class="show-actions">
+  <div class="flex flex-inline mt-5">
 
-      <%= link_to "Retour", root_path, class: "btn btn-ghost" %>
-      <% if user_signed_in?  %>
-        <%= link_to "Réserver", new_piece_transaction_path(@piece) ,class: "btn btn-ghost" %>
-            <% if current_user == @piece.owner %>
-             <%= link_to 'modifier', edit_piece_path(@piece) ,class: "btn btn-ghost" %>
-             <%= button_to piece_path(@piece),
-                method: :delete,
-                data: { confirm: "Voulez-vous supprimer #{@piece.name}?" },
-                type: "button",
-                class: "btn btn-ghost" do %>
-                Supprimer
-             <% end %>
-            <% end %>
+    <%= link_to "Retour", root_path, class: "btn btn-ghost" %>
+    <% if user_signed_in?  %>
+      <%= link_to "Réserver", new_piece_transaction_path(@piece) ,class: "btn btn-ghost" %>
+      <% if current_user == @piece.owner %>
+        <%= link_to 'modifier', edit_piece_path(@piece) ,class: "btn btn-ghost" %>
+        <%= link_to piece_path(@piece),
+                    method: :delete,
+                    data: { confirm: "Voulez-vous supprimer #{@piece.name}?" },
+                    type: "button",
+                    class: "btn btn-ghost" do %>
+          Supprimer
+        <% end %>
+      <% end %>
     <% end %>
 
 
   </div>
 
 </div>
-
 
 <%= javascript_pack_tag 'wikiText' %>

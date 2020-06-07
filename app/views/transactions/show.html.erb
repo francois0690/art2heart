@@ -1,24 +1,37 @@
+<div class="show-transaction">
 
-  <h1><%= @transaction.piece.name %></h1>
-  <h2><%= @transaction.piece.artist %></h2>
 
-<%= render 'shared/carousel', piece: @transaction.piece %>
 
-<div class="container-text my-4">
-  <div class="container-infos">
-  <p><%= "début de location : #{@transaction.date_start}" %></p>
-  <p><%= "fin de location : #{@transaction.date_end}" %></p>
-  <p><%= "montant de la location : #{@montant} €" %></p>
+
+  <%= render 'shared/carousel', piece: @transaction.piece %>
+
+
+
+<div class="show-info">
+    <div class="info-piece">
+      <h1 id="piece-name"><%= @piece.name %></h1>
+      <h2>Artiste : <%= @piece.artist %></h2>
+      <h2>Propriétaire : <%= @piece.owner.first_name %> <%= @piece.owner.last_name %></h2>
+      <h2><%= "Début de location : #{@transaction.date_start}" %></h2>
+      <h2><%= "Fin de location : #{@transaction.date_end}" %></h2>
+          <h2>Montant de la location : <%= (@transaction.date_end - @transaction.date_start).to_i * @transaction.piece.price %> € </h2>
+
+    </div>
+  </div>
+
+
+
+
+  <div class= "d-inline-flex ">
+  <%= button_to "Retour aux réservations", transactions_path, method: :get, class: "btn btn-ghost" %>
+  <%= button_to 'Modifier', edit_transaction_path(@transaction), method: :get,class: "btn btn-ghost"%>
+
+  <%= button_to 'Annuler la réservation', transaction_path(@transaction),
+          method: :delete,
+          data: { confirm: "Voulez-vous annuler la réservation de :#{@transaction.piece.name}?" },
+          class: "btn btn-ghost" %>
+  </div>
+
 
 </div>
 
-<div class= "d-inline-flex">
-<%= button_to "retour aux réservations", transactions_path, method: :get, class: "btn btn-ghost" %>
-
-<%= button_to 'modifier', edit_transaction_path(@transaction), method: :get,class: "btn btn-ghost"%>
-
-<%= button_to 'annuler la réservation', transaction_path(@transaction),
-        method: :delete,
-        data: { confirm: "Voulez-vous annuler la réservation de :#{@transaction.piece.name}?" },
-        class: "btn btn-ghost" %>
-</div>

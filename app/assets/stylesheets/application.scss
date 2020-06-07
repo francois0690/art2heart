@@ -13,6 +13,8 @@
 @import "pages/form";
 @import "users/dashboard";
 @import "pieces/show";
+@import "transactions/show";
+@import "components/logo";
 
 // FONTS
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Space+Mono:wght@400;700&display=swap');
@@ -23,12 +25,14 @@ body {
     // backdrop-filter: blur(2px);
     background-size: cover;
     background-attachment: fixed;
-
 }
 
 .my-container {
     margin: 0 auto;
     width: 1300px;
+     position: relative;
+     min-height: 100%;
+
 }
 
 @media (max-width: 1200px) {
