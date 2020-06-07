@@ -1,11 +1,14 @@
+require "open-uri"
+
 class PiecesController < ApplicationController
   before_action :set_piece, only: [:show, :edit, :update, :destroy]
 
   def create
-    @piece = Piece.new(piece_params)
+    new_params = piece_params.except(:wikiphoto)
+    @piece = Piece.new(new_params)
     @piece.owner = current_user
-    @piece.save
     if @piece.save
+      attach_remote_photo if piece_params[:wikiphoto]
       redirect_to piece_path(@piece)
     else
       render :new
@@ -50,6 +53,11 @@ class PiecesController < ApplicationController
   end
 
   def piece_params
-    params.require(:piece).permit(:name, :artist, :category, :price, photos: [])
+    params.require(:piece).permit(:name, :artist, :category, :price, :wikiphoto, photos: [])
+  end
+
+  def attach_remote_photo
+    wiki_img = URI.open(params[:piece][:wikiphoto].to_s)
+    @piece.photos.attach(io: wiki_img, filename: 'wikipedia.jpg', content_type: 'image/jpg')
   end
 end
