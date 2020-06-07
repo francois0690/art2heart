@@ -8,7 +8,7 @@ class PiecesController < ApplicationController
     @piece = Piece.new(new_params)
     @piece.owner = current_user
     if @piece.save
-      attach_remote_photo if params[:wikiphoto]
+      attach_remote_photo if piece_params[:wikiphoto]
       redirect_to piece_path(@piece)
     else
       render :new
@@ -59,6 +59,5 @@ class PiecesController < ApplicationController
   def attach_remote_photo
     wiki_img = URI.open(params[:piece][:wikiphoto].to_s)
     @piece.photos.attach(io: wiki_img, filename: 'wikipedia.jpg', content_type: 'image/jpg')
-    raise
   end
 end
