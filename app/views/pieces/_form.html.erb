@@ -2,7 +2,7 @@
 <div class="form-container">
   <%= simple_form_for(@piece) do |f| %>
   <%= f.input :name %>
-  <%= link_to "rechercher sur Wikipedia", "#", id: "wikiBtn", class: "btn btn-ghost btn-lg btn-block btn-booking" %>
+  <%= link_to "rechercher sur Wikipedia", "#", id: "wikiBtn", class: "btn btn-ghost btn-lg btn-block btn-booking", remote: :true %>
   <br>
   <%= f.input :artist %>
   <%= f.select :category, collection: %w(peinture sculpture photo autres) %>
@@ -12,7 +12,7 @@
 <% end %>
 <br>
 </div>
-<%= link_to "#", class: "btn btn-ghost btn-lg btn-block btn-booking", id: "btnPhoto" do %>
+<%= link_to "", class: "btn btn-ghost btn-lg btn-block btn-booking", id: "btnPhoto", remote: :true do %>
    <i class="fas fa-plus-circle"></i>
 <% end %>
 <div id="wikiImg"></div>

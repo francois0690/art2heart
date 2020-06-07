@@ -4,7 +4,7 @@ class PiecesController < ApplicationController
   def create
     @piece = Piece.new(piece_params)
     @piece.owner = current_user
-
+    binding.pry
     if @piece.save
       attach_remote_photo if params[:wikiphoto]
       redirect_to piece_path(@piece)
@@ -51,7 +51,7 @@ class PiecesController < ApplicationController
   end
 
   def piece_params
-    params.require(:piece).permit(:name, :artist, :category, :price, photos: [])
+    params.require(:piece).permit(:name, :artist, :category, :price, :wikiphoto, photos: [])
   end
 
   def attach_remote_photo
