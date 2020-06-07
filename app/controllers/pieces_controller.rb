@@ -1,10 +1,12 @@
+require "open-uri"
+
 class PiecesController < ApplicationController
   before_action :set_piece, only: [:show, :edit, :update, :destroy]
 
   def create
-    @piece = Piece.new(piece_params)
+    new_params = piece_params.except(:wikiphoto)
+    @piece = Piece.new(new_params)
     @piece.owner = current_user
-    binding.pry
     if @piece.save
       attach_remote_photo if params[:wikiphoto]
       redirect_to piece_path(@piece)
@@ -55,6 +57,8 @@ class PiecesController < ApplicationController
   end
 
   def attach_remote_photo
-    @piece.photos.attach(io: :wikiphoto, filename: 'David.jpg', content_type: 'image/jpg')
+    wiki_img = URI.open(params[:piece][:wikiphoto].to_s)
+    @piece.photos.attach(io: wiki_img, filename: 'wikipedia.jpg', content_type: 'image/jpg')
+    raise
   end
 end
